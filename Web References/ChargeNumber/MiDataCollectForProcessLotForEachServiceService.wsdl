@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://machineintegration.ws.atlmes.com/" targetNamespace="http://machineintegration.ws.atlmes.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:ns1="http://www.sap.com/me/datacollection" targetNamespace="http://machineintegration.ws.atlmes.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.sap.com/me/datacollection" />
+      <xs:element name="dataCollectForProcessLotForEachRequest" type="tns:dataCollectForProcessLotForEachRequest" />
+      <xs:element name="dataCollectForProcessLotForEachResponse" type="tns:dataCollectForProcessLotForEachResponse" />
+      <xs:element name="dataCollectResultArrayData" type="tns:dataCollectResultArrayData" />
+      <xs:element name="dataCollectSfcParametricData" type="tns:dataCollectSfcParametricData" />
+      <xs:element name="machineIntegrationParametricData" type="tns:machineIntegrationParametricData" />
+      <xs:element name="miCommonResponse" type="tns:miCommonResponse" />
+      <xs:element name="miDataCollectForProcessLotForEach" type="tns:miDataCollectForProcessLotForEach" />
+      <xs:element name="miDataCollectForProcessLotForEachResponse" type="tns:miDataCollectForProcessLotForEachResponse" />
+      <xs:element name="nonConfirmCodeArray" type="tns:nonConfirmCodeArray" />
+      <xs:complexType name="miDataCollectForProcessLotForEach">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataCollectForProcessLotForEachRequest" type="tns:dataCollectForProcessLotForEachRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dataCollectForProcessLotForEachRequest">
+        <xs:sequence>
+          <xs:element name="site" type="xs:string" />
+          <xs:element name="processLot" type="xs:string" />
+          <xs:element name="operation" type="xs:string" />
+          <xs:element minOccurs="0" name="operationRevision" type="xs:string" />
+          <xs:element name="resource" type="xs:string" />
+          <xs:element name="user" type="xs:string" />
+          <xs:element name="activityID" type="xs:string" />
+          <xs:element minOccurs="0" name="isDispositionRequired" type="xs:boolean" />
+          <xs:element name="modeProcessSfc" type="tns:ModeProcessSfc" />
+          <xs:element maxOccurs="unbounded" name="sfcArray" type="tns:dataCollectSfcParametricData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dataCollectSfcParametricData">
+        <xs:sequence>
+          <xs:element name="sfc" type="xs:string" />
+          <xs:element name="dcGroup" type="xs:string" />
+          <xs:element name="dcGroupRevision" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="parametricDataArray" type="tns:machineIntegrationParametricData" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ncCodeArray" type="tns:nonConfirmCodeArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="machineIntegrationParametricData">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="value" type="xs:string" />
+          <xs:element name="dataType" type="ns1:ParameterDataType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="nonConfirmCodeArray">
+        <xs:sequence>
+          <xs:element name="ncCode" type="xs:string" />
+          <xs:element name="hasNc" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="miDataCollectForProcessLotForEachResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:dataCollectForProcessLotForEachResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dataCollectForProcessLotForEachResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:miCommonResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="resultArray" type="tns:dataCollectResultArrayData" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="miCommonResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dataCollectResultArrayData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sfc" type="xs:string" />
+          <xs:element minOccurs="0" name="resultCode" type="xs:int" />
+          <xs:element minOccurs="0" name="errorMessage" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ModeProcessSfc">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MODE_NONE" />
+          <xs:enumeration value="MODE_START_SFC_PRE_DC" />
+          <xs:enumeration value="MODE_COMPLETE_SFC_POST_DC" />
+          <xs:enumeration value="MODE_PASS_SFC_POST_DC" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://www.sap.com/me/datacollection" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="ParameterDataType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NUMBER" />
+          <xs:enumeration value="TEXT" />
+          <xs:enumeration value="FORMULA" />
+          <xs:enumeration value="BOOLEAN" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="miDataCollectForProcessLotForEachIn">
+    <wsdl:part name="parameters" element="tns:miDataCollectForProcessLotForEach" />
+  </wsdl:message>
+  <wsdl:message name="miDataCollectForProcessLotForEachOut">
+    <wsdl:part name="miDataCollectForProcessLotForEachResponse" element="tns:miDataCollectForProcessLotForEachResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MiDataCollectForProcessLotForEachService">
+    <wsdl:operation name="miDataCollectForProcessLotForEach" parameterOrder="parameters">
+      <wsdl:input message="tns:miDataCollectForProcessLotForEachIn" />
+      <wsdl:output message="tns:miDataCollectForProcessLotForEachOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="MiDataCollectForProcessLotForEachServiceBinding" type="tns:MiDataCollectForProcessLotForEachService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="miDataCollectForProcessLotForEach">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MiDataCollectForProcessLotForEachServiceService">
+    <wsdl:port name="MiDataCollectForProcessLotForEachServicePort" binding="tns:MiDataCollectForProcessLotForEachServiceBinding">
+      <address location="http://ndmesd003.ATLbattery.com:50000/atlmeswebservice/MiDataCollectForProcessLotForEachServiceService" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8C17804-4986-4A0F-944F-BF9E25DA6EB5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ND</RootNamespace>
+    <AssemblyName>NDL10</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TD.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.0.0.15, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.15, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.Instrumentation, Version=14.0.0.15, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DictionaryHelp.cs" />
+    <Compile Include="frm_Parameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Parameter.Designer.cs">
+      <DependentUpon>frm_Parameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ResourceNumber .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ResourceNumber .Designer.cs">
+      <DependentUpon>frm_ResourceNumber .cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QueryReport .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QueryReport .Designer.cs">
+      <DependentUpon>frm_QueryReport .cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Machine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Machine.Designer.cs">
+      <DependentUpon>frm_Machine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TimeQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TimeQuery.Designer.cs">
+      <DependentUpon>frm_TimeQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Upload .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Upload .Designer.cs">
+      <DependentUpon>frm_Upload .cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlHelp.cs" />
+    <Compile Include="MESHelp\AcquisitionElectricCoreHelp.cs" />
+    <Compile Include="MESHelp\Interface.cs" />
+    <Compile Include="OutAndInInfoHelp.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SerialPortHelper.cs" />
+    <Compile Include="frm_TemperatureQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TemperatureQuery.Designer.cs">
+      <DependentUpon>frm_TemperatureQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Authoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Authoring.Designer.cs">
+      <DependentUpon>frm_Authoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frm_Authority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Authority.Designer.cs">
+      <DependentUpon>frm_Authority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\BindingPallt\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ChargeNumber\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CoreList\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ElectricCoreState\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PattelCheck\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frm_Parameter.resx">
+      <DependentUpon>frm_Parameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ResourceNumber .resx">
+      <DependentUpon>frm_ResourceNumber .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Authoring.resx">
+      <DependentUpon>frm_Authoring.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QueryReport .resx">
+      <DependentUpon>frm_QueryReport .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Machine.resx">
+      <DependentUpon>frm_Machine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TimeQuery.resx">
+      <DependentUpon>frm_TimeQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Upload .resx">
+      <DependentUpon>frm_Upload .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Authority.resx">
+      <DependentUpon>frm_Authority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TemperatureQuery.resx">
+      <DependentUpon>frm_TemperatureQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\BindingPallt\miBindSFCintoTrayResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\BindingPallt\MiBindSFCintoTrayServiceService.wsdl" />
+    <None Include="Web References\BindingPallt\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ChargeNumber\miDataCollectForProcessLotForEachResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ChargeNumber\MiDataCollectForProcessLotForEachServiceService.wsdl" />
+    <None Include="Web References\ChargeNumber\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CoreList\CellTestIntegrationServiceService.wsdl" />
+    <None Include="Web References\CoreList\completeFormationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\completeOCVResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\completeStandbyResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\getCellListByTrayIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\getCellTestResultByTrayIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\getChannelStatusResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\getOcvTypeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\getProcessFilePathByTrayIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\getStandbyDurationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\isFormationReadyResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\postAGResultResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\postICResultResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\postOCVResultResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CoreList\releaseTrayIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\removeCellFromTrayIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CoreList\startStandbyResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElectricCoreState\miCheckSFCstatusResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElectricCoreState\MiCheckSFCStatusServiceService.wsdl" />
+    <None Include="Web References\ElectricCoreState\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PattelCheck\miCheckProcessLotResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PattelCheck\MiCheckProcessLotServiceService.wsdl" />
+    <None Include="Web References\PattelCheck\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact_grey_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rur.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expected.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\co.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer_72px_1144010_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenlight.png" />
+    <None Include="Resources\redlight.png" />
+    <None Include="Resources\picture.png" />
+    <None Include="Resources\function.jpg" />
+    <None Include="Resources\function.jpeg" />
+    <None Include="Resources\blue.png" />
+    <Content Include="TD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BLL\BLL.csproj">
+      <Project>{abee77e5-f90e-4848-8809-88abd811539b}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="Common\Common.csproj">
+      <Project>{86effdef-4e1a-43d6-b418-25e2a62efa64}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://172.26.11.3:50000/atlmeswebservice/CellTestIntegrationServiceService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CoreList\</RelPath>
+      <UpdateFromURL>http://172.26.11.3:50000/atlmeswebservice/CellTestIntegrationServiceService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NDL10_CoreList_CellTestIntegrationServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.26.11.3:50000/atlmeswebservice/MiBindSFCintoTrayServiceService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\BindingPallt\</RelPath>
+      <UpdateFromURL>http://172.26.11.3:50000/atlmeswebservice/MiBindSFCintoTrayServiceService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NDL10_BindingPallt_MiBindSFCintoTrayServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.26.11.3:50000/atlmeswebservice/MiCheckProcessLotServiceService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PattelCheck\</RelPath>
+      <UpdateFromURL>http://172.26.11.3:50000/atlmeswebservice/MiCheckProcessLotServiceService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NDL10_PattelCheck_MiCheckProcessLotServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.26.11.3:50000/atlmeswebservice/MiCheckSFCStatusServiceService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ElectricCoreState\</RelPath>
+      <UpdateFromURL>http://172.26.11.3:50000/atlmeswebservice/MiCheckSFCStatusServiceService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NDL10_ElectricCoreState_MiCheckSFCStatusServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.26.11.3:50000/atlmeswebservice/MiDataCollectForProcessLotForEachServiceService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ChargeNumber\</RelPath>
+      <UpdateFromURL>http://172.26.11.3:50000/atlmeswebservice/MiDataCollectForProcessLotForEachServiceService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NDL10_ChargeNumber_MiDataCollectForProcessLotForEachServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
